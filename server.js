@@ -16,13 +16,16 @@ app.set("view engine", "ejs");
 
 
 //4
-app.get("/", function (req, res) {
-    res.end("<h1>Hello world</h1>");
-})
 
-app.get("/gift", function (req, res) {
-	res.end("<h1>Siz sovgalar bolimidasz</h1>");
+app.post("/create-item", function (req, res) {
+	//todo: code with db here
 });
+
+app.get("/", function (req, res) {
+	res.render("harid");
+});
+
+
 
 const server = http.createServer(app);
 let PORT = 3000;
