@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+		/>
+		<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="/main.css" />
+		<title>Portfolio</title>
+	</head>
+	<body>
+		<div class="frame">
+			<div class="main_frame">
+				<div class="left_frame">
+					<div class="left_1">
+						<div class="left_1_1">
+							<img src="/author/images/profile.svg" alt="" />
+						</div>
+						<div class="left_1_2"><%=user.name%></div>
+
+						<div class="left_1_3"><%=user.profession%></div>
+						<div class="left_icons">
+							<a class="link_href" href="">
+								<div class="icon">
+									<img src="icon/vec1.svg" alt="" class="icon_1" />
+								</div>
+							</a>
+							<a class="link_href" href="">
+								<div class="icon">
+									<img src="icon/vec2.svg" alt="" class="icon_1" />
+								</div>
+							</a>
+							<a class="link_href" href="">
+								<div class="icon">
+									<img src="icon/vec3.svg" alt="" class="icon_1" />
+								</div>
+							</a>
+							<a class="link_href" href="">
+								<div class="icon">
+									<img src="icon/vec4.svg" alt="" class="icon_1" />
+								</div>
+							</a>
+							<a class="link_href" href="">
+								<div class="icon">
+									<img src="icon/vec5.svg" alt="" class="icon_1" />
+								</div>
+							</a>
+
+							<a class="link_href" href="">
+								<div class="icon">
+									<img src="icon/vec6.svg" alt="" class="icon_1" />
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="marginer"></div>
+
+					<div class="left_2">
+						<div class="about_placing">
+							<div class="left_2_1">Age:</div>
+							<div><%=user.age%></div>
+						</div>
+						<div class="about_placing">
+							<div class="left_2_1">Residence:</div>
+							<div clas><%=user.residence%></div>
+						</div>
+						<div class="about_placing">
+							<div class="left_2_1">Freelance:</div>
+							<div style="color: var(--Available, #7eb942)">Available</div>
+						</div>
+						<div class="about_placing">
+							<div class="left_2_1">Address:</div>
+							<div><%=user.address%></div>
+						</div>
+					</div>
+					<div class="marginer"></div>
+
+					<div class="left_3">
+						<div class="title">Languages</div>
+
+						<div class="title_elements">
+							<div><%=user.languages[0]%></div>
+							<div>100%</div>
+						</div>
+						<div class="marginer2"><img src="icon/lin1.svg" alt="" /></div>
+						<div class="title_elements">
+							<div><%=user.languages[1]%></div>
+							<div>80%</div>
+						</div>
+						<div class="marginer2"><img src="icon/line2.svg" alt="" /></div>
+						<div class="title_elements">
+							<div><%=user.languages[2]%></div>
+							<div>60%</div>
+						</div>
+						<div class="marginer2"><img src="icon/line3.svg" alt="" /></div>
+					</div>
+					<div class="marginer"></div>
+					<div class="left_4">
+						<div class="title">Skills</div>
+
+						<div class="title_elements">
+							<div><%=user.skills[0]%></div>
+							<div>90%</div>
+						</div>
+						<div class="marginer2"><img src="icon/line4.svg" alt="" /></div>
+						<div class="title_elements">
+							<div><%=user.skills[1]%></div>
+							<div>85%</div>
+						</div>
+						<div class="marginer2"><img src="icon/line5.svg" alt="" /></div>
+						<div class="title_elements">
+							<div><%=user.skills[2]%></div>
+							<div>80%</div>
+						</div>
+						<div class="marginer2"><img src="icon/line6.svg" alt="" /></div>
+						<div class="title_elements">
+							<div><%=user.skills[3]%></div>
+							<div>75%</div>
+						</div>
+						<div class="marginer2">
+							<img src="icon/line7.svg" alt="" />
+						</div>
+						<div class="title_elements">
+							<div><%=user.skills[4]%></div>
+							<div>85%</div>
+						</div>
+						<div class="marginer2"><img src="icon/line8.svg" alt="" /></div>
+					</div>
+					<div class="marginer"></div>
+					<div class="left_5">
+						<div class="title">Extra Skills</div>
+						<div class="extra_skills">
+							<div>
+								<img
+									src="icon/rec_icon.svg"
+									alt=""
+									style="margin: 5px 15px 5px 0"
+								/>
+							</div>
+							<div><%=user.extra_skills[0]%></div>
+						</div>
+						<div class="extra_skills">
+							<div>
+								<img
+									src="icon/rec_icon.svg"
+									alt=""
+									style="margin: 5px 15px 5px 0"
+								/>
+							</div>
+							<div><%=user.extra_skills[1]%></div>
+						</div>
+						<div class="extra_skills">
+							<div>
+								<img
+									src="icon/rec_icon.svg"
+									alt=""
+									style="margin: 5px 15px 5px 0"
+								/>
+							</div>
+							<div><%=user.extra_skills[2]%></div>
+						</div>
+						<div class="extra_skills">
+							<div>
+								<img
+									src="icon/rec_icon.svg"
+									alt=""
+									style="margin: 5px 15px 5px 0"
+								/>
+							</div>
+							<div><%=user.extra_skills[3]%></div>
+						</div>
+						<div class="marginer"></div>
+					</div>
+				</div>
+				<div class="mid_frame">
+					<div class="mid_up">
+						<div class="mid_up_1">
+							<div class="mid_up_title"><%=user.work_place%></div>
+							<div class="mid_up_text"><%=user.about_me%></div>
+							<div class="mid_butt">HIRE ME</div>
+						</div>
+						<div class="mid_up_2">
+							<img src="icon/img1.png" alt="" />
+						</div>
+						<div class="icon_abs">
+							<img src="icon/ellipse15.svg" style="top: 38px; left: 36px" />
+							<img src="icon/ellipse12.svg" style="top: 59px; left: 516px" />
+							<img src="icon/ellipse13.svg" style="top: 378px; left: 558px" />
+							<img src="icon/ellipse16.svg" style="bottom: 19px; left: 84px" />
+
+							<img src="icon/rec_blue.svg" style="top: 330px; left: 370px" />
+							<img src="icon/rec_orange.svg" style="top: 76px; right: 57px" />
+							<img src="icon/trian1.svg" style="bottom: 15px; right: 37px" />
+						</div>
+					</div>
+					<div class="mid_bottom">
+						<div class="mid_bot_1">
+							<div class="mid_bot_title">My Services</div>
+							<div class="mid_bot_text"><%=user.service_desc%></div>
+						</div>
+						<div class="mid_bot_2">
+							<div class="mid_bot_con">
+								<img src="box_images/coding.svg" alt="" class="mid_bot_img" />
+								<div class="title">Web Development</div>
+								<div class="title_elements">BLOG, E-Commerce</div>
+							</div>
+							<div class="mid_bot_con">
+								<img
+									src="box_images/illustration.svg"
+									alt=""
+									class="mid_bot_img"
+								/>
+								<div class="title">UI/UX design</div>
+								<div class="title_elements">Mobile app, website design</div>
+							</div>
+							<div class="mid_bot_con">
+								<img src="box_images/mic.svg" alt="" class="mid_bot_img" />
+								<div class="title">Sound Design</div>
+								<div class="title_elements">Voice Over, Beat Making</div>
+							</div>
+						</div>
+						<div class="mid_bot_2">
+							<div class="mid_bot_con">
+								<img src="box_images/game.svg" alt="" class="mid_bot_img" />
+								<div class="title">Game Design</div>
+								<div class="title_elements">Voice Over, Beat Making</div>
+							</div>
+							<div class="mid_bot_con">
+								<img src="box_images/phot1.svg" alt="" class="mid_bot_img" />
+								<div class="title">Photography</div>
+								<div class="title_elements">Portrait, Product Photography</div>
+							</div>
+							<div class="mid_bot_con">
+								<div class="title">Advertising</div>
+								<div class="adds">
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae
+									nulla diam in ac dictum a urna viverra morbi.
+								</div>
+								<div class="adds_2">ORDER NOW ></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="right_frame">
+					<div class="right_1"><img src="btn_icon/Contrast.svg" alt="" /></div>
+					<div class="right_2">
+						<div class="union-wrapper">
+							<img src="btn_icon/Union.svg" alt="Union icon" />
+							<span class="union-text">Home</span>
+						</div>
+
+						<div class="right_icon">
+							<img src="btn_icon/Home.svg" alt="" class="right_icon_1" />
+						</div>
+						<div class="right_icon_gray">
+							<img src="btn_icon/file-code.svg" alt="" class="right_icon_1" />
+						</div>
+						<div class="right_icon_gray">
+							<img src="btn_icon/cv.svg" alt="" class="right_icon_1" />
+						</div>
+						<div class="right_icon_gray">
+							<img src="btn_icon/Vector.svg" alt="" class="right_icon_1" />
+						</div>
+						<div class="right_icon_gray">
+							<img src="btn_icon/Blog.svg" alt="" class="right_icon_1" />
+						</div>
+						<div class="right_icon_gray">
+							<img src="btn_icon/Contact.svg" alt="" class="right_icon_1" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

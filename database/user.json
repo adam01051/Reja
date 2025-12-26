@@ -1,0 +1,36 @@
+{
+	"name": "ADAM",
+	"profession": "Software Engineer",
+	"age": 25,
+	"residence": "S.Korea",
+	"address": "S.Korea, SEOUL",
+	"languages": ["Uzbek", "Korean", "English"],
+	"skills": ["HTML", "CSS", "JavaScript", "NodeJS", "Python"],
+	"extra_skills": [
+		"Bootstrap, Materialize",
+		"Styling, Sass",
+		"Django, Flask",
+		"Git Knowledge"
+	],
+	"work_place": "Software Engineer in IT Company",
+	"service_desc": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum.",
+	"about_me": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, volutpat feugiat placerat lobortis. Natoque rutrum semper sed suspendisse nunc lectus.",
+	"city": "Denau",
+	"title": ["Flower", "Seedlings", "Gardner", "Old", "New"],
+	"flower_desc": [
+		"What is a Flower?",
+		"What is a Seedling?",
+		"Who is a Gardner?"
+	],
+	"flowers": [
+		"Poppy",
+		"Sunflower",
+		"Bluebell",
+		"Rose",
+		"Snowdrop",
+		"Cherry Blossom"
+	],
+	"flower_price": ["15$", "25$", "12$", "20$", "35$", "30$", "22$"],
+	"famous_words": ["World is beautiful with flowers"],
+	"famous_name": ["Steve Jobs"]
+}
