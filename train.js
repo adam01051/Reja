@@ -1,15 +1,28 @@
-//mitask a
+//mitask b
 
-function countLetter(a, b) {
+function countDigits(text) {
 	let count = 0;
-	for (const ele of b) {
-		if (a === ele) {
+	for (const ele of text) {
+		if (ele >= "0" && ele <= "9") {
 			count++;
 		}
 	}
 	return count;
 }
-console.log(countLetter("e", "engineer"));
+console.log(countDigits("ad2a54y79wet0sfgb9"));
+
+// //mitask a
+
+// function countLetter(a, b) {
+// 	let count = 0;
+// 	for (const ele of b) {
+// 		if (a === ele) {
+// 			count++;
+// 		}
+// 	}
+// 	return count;
+// }
+// console.log(countLetter("e", "engineer"));
 
 //22nd lecture
 // const list = [
