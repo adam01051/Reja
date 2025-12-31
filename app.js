@@ -24,9 +24,11 @@ app.post("/create-item", function (req, res) {
 	db.collection("reja").insertOne({ reja: new_reja }, (err, data) => {
 		if (err) {
 			{
-				console.log("smth went wrong on adding to reja", err);
+				res.end("smth went wrong on adding to reja");
+				console.log(err);
 			}
 		} else {
+			res.end("successfully added");
 			console.log("susccess");
 		}
 	});
