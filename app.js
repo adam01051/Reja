@@ -4,7 +4,7 @@ const http = require("http");
 const fs = require("fs");
 
 const db = require("./server").db();
-
+const mongodb = require("mongodb");
 app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -43,7 +43,18 @@ app.get("/", function (req, res) {
 			}
 		});
 });
+app.post("/delete-item", (req, res) => {
+	const id = req.body.id;
+	db.collection("reja").deleteOne(
+		{ _id: new mongodb.ObjectId(id) },
+		function (err, data) {
+			if (err) {
+				console.log(err);
+				res.end("smth went wrong");
+			}
+			res.json({ state: "success" });
+		}
+	);
+});
 
-
-
-module.exports =app;
+module.exports = app;
