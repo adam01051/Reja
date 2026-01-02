@@ -1,15 +1,74 @@
-//mitask b
+//mitask c
+const now = new Date();
+const hours = now.getHours();
+const minutes = now.getMinutes();
 
-function countDigits(text) {
-	let count = 0;
-	for (const ele of text) {
-		if (ele >= "0" && ele <= "9") {
-			count++;
+class Shop {
+	#non;
+	#cola;
+	#lagmon;
+	constructor(non, cola, lagmon) {
+		this.#non = non;
+		this.#cola = cola;
+		this.#lagmon = lagmon;
+	}
+
+	qoldiq() {
+		console.log(
+			`Hozir ${hours}:${minutes}'da  ${this.#non}'ta non,  ${
+				this.#lagmon
+			}'ta lag'mon, ${this.#cola}'ta cola mavjud!`
+		);
+	}
+
+	qabul(elem, num) {
+		if (elem === "non") {
+			this.#non = this.#non + num;
+		} else if (elem === "cola") {
+			this.#cola = this.#cola + num;
+		} else if (elem === "lag'mon") {
+			this.#lagmon = this.#lagmon + num;
 		}
 	}
-	return count;
+	sotish(elem, num) {
+		if (elem === "non") {
+			if (this.#non >= num) {
+				this.#non -= num;
+			} else {
+				console.log("Yetarli mahsulot (non) mavjud emas");
+			}
+		} else if (elem === "cola") {
+			if (this.#cola >= num) {
+				this.#cola -= num;
+			} else {
+				console.log("Yetarli mahsulot (cola) mavjud emas");
+			}
+		} else if (elem === "lag'mon") {
+			if (this.#lagmon >= num) {
+				this.#lagmon -= num;
+			} else {
+				console.log("Yetarli mahsulot (lag'mon) mavjud emas");
+			}
+		}
+	}
 }
-console.log(countDigits("ad2a54y79wet0sfgb9"));
+//did optional logic for sotish() method
+const shop = new Shop(4, 5, 2);
+shop.sotish("non", 6);
+shop.qoldiq();
+
+//mitask b
+
+// function countDigits(text) {
+// 	let count = 0;
+// 	for (const ele of text) {
+// 		if (ele >= "0" && ele <= "9") {
+// 			count++;
+// 		}
+// 	}
+// 	return count;
+// }
+// console.log(countDigits("ad2a54y79wet0sfgb9"));
 
 // //mitask a
 
