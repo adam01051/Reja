@@ -56,5 +56,26 @@ app.post("/delete-item", (req, res) => {
 		}
 	);
 });
+app.post("/edit-item", (req, res) => {
+	const data = req.body;
+	db.collection("reja").findOneAndUpdate(
+		{ _id: new mongodb.ObjectId(data.id) },
+		{ $set: { reja: data.new_input } },
+		function (err, data) {
+			if (err) {
+				console.log(err);
+				res.end("smth went wrong");
+			}
+			res.json({ state: "success" });
+		}
+	);
+});
+app.post("/delete-all", (req, res) => {
+	if (req.body.delete_all) {
+		db.collection("reja").deleteMany(function () {
+			res.json({ state: "hamma reja ochirildi" });
+		});
+	}
+});
 
 module.exports = app;
