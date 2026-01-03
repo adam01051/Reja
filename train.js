@@ -1,61 +1,83 @@
-//mitask c
-const now = new Date();
-const hours = now.getHours();
-const minutes = now.getMinutes();
-
-class Shop {
-	#non;
-	#cola;
-	#lagmon;
-	constructor(non, cola, lagmon) {
-		this.#non = non;
-		this.#cola = cola;
-		this.#lagmon = lagmon;
-	}
-
-	qoldiq() {
-		console.log(
-			`Hozir ${hours}:${minutes}'da  ${this.#non}'ta non,  ${
-				this.#lagmon
-			}'ta lag'mon, ${this.#cola}'ta cola mavjud!`
-		);
-	}
-
-	qabul(elem, num) {
-		if (elem === "non") {
-			this.#non = this.#non + num;
-		} else if (elem === "cola") {
-			this.#cola = this.#cola + num;
-		} else if (elem === "lag'mon") {
-			this.#lagmon = this.#lagmon + num;
-		}
-	}
-	sotish(elem, num) {
-		if (elem === "non") {
-			if (this.#non >= num) {
-				this.#non -= num;
-			} else {
-				console.log("Yetarli mahsulot (non) mavjud emas");
-			}
-		} else if (elem === "cola") {
-			if (this.#cola >= num) {
-				this.#cola -= num;
-			} else {
-				console.log("Yetarli mahsulot (cola) mavjud emas");
-			}
-		} else if (elem === "lag'mon") {
-			if (this.#lagmon >= num) {
-				this.#lagmon -= num;
-			} else {
-				console.log("Yetarli mahsulot (lag'mon) mavjud emas");
-			}
-		}
-	}
+// mitask d
+function checkContent(a, b) {
+	let c = a.split("").sort().join();
+	let d = b.split("").sort().join();
+	return c === d;
 }
-//did optional logic for sotish() method
-const shop = new Shop(4, 5, 2);
-shop.sotish("non", 6);
-shop.qoldiq();
+
+console.log(checkContent("mitgroup", "gmtiprou")); // true
+
+// function checkContent(a, b) {
+// 	if (a.length != b.length) return false;
+//   for (let i = 0; i < a.length; i++) {
+// 	  for (let j = 0; j < b.length; j++){
+// 		  if (a[i] === b[j])
+// 		  {
+
+// 				}
+// 		}
+// 	}
+// 	return c === d;
+// }
+
+// //mitask c
+// const now = new Date();
+// const hours = now.getHours();
+// const minutes = now.getMinutes();
+
+// class Shop {
+// 	#non;
+// 	#cola;
+// 	#lagmon;
+// 	constructor(non, cola, lagmon) {
+// 		this.#non = non;
+// 		this.#cola = cola;
+// 		this.#lagmon = lagmon;
+// 	}
+
+// 	qoldiq() {
+// 		console.log(
+// 			`Hozir ${hours}:${minutes}'da  ${this.#non}'ta non,  ${
+// 				this.#lagmon
+// 			}'ta lag'mon, ${this.#cola}'ta cola mavjud!`
+// 		);
+// 	}
+
+// 	qabul(elem, num) {
+// 		if (elem === "non") {
+// 			this.#non = this.#non + num;
+// 		} else if (elem === "cola") {
+// 			this.#cola = this.#cola + num;
+// 		} else if (elem === "lag'mon") {
+// 			this.#lagmon = this.#lagmon + num;
+// 		}
+// 	}
+// 	sotish(elem, num) {
+// 		if (elem === "non") {
+// 			if (this.#non >= num) {
+// 				this.#non -= num;
+// 			} else {
+// 				console.log("Yetarli mahsulot (non) mavjud emas");
+// 			}
+// 		} else if (elem === "cola") {
+// 			if (this.#cola >= num) {
+// 				this.#cola -= num;
+// 			} else {
+// 				console.log("Yetarli mahsulot (cola) mavjud emas");
+// 			}
+// 		} else if (elem === "lag'mon") {
+// 			if (this.#lagmon >= num) {
+// 				this.#lagmon -= num;
+// 			} else {
+// 				console.log("Yetarli mahsulot (lag'mon) mavjud emas");
+// 			}
+// 		}
+// 	}
+// }
+// //did optional logic for sotish() method
+// const shop = new Shop(4, 5, 2);
+// shop.sotish("non", 6);
+// shop.qoldiq();
 
 //mitask b
 
