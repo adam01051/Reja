@@ -1,5 +1,20 @@
-//mitask e
+// E-TASK:
+function getReverse(a) {
+	return a.split("").reverse().join("");
+}
 
+console.log(getReverse("hello world"));
+
+//1-try
+// function getReverse(a) {
+// 	const element = [];
+// 	for (let index = a.length; index >= 0; index--) {
+// 		 element.push(a[index]);
+// 	}
+// 	return element.join("");
+// }
+// console.log(getReverse("hello world"));
+//////////////////////////////////////////////////////////
 // mitask d
 // function checkContent(a, b) {
 // 	let c = a.split("").sort().join();
@@ -21,7 +36,7 @@
 // 	}
 // 	return c === d;
 // }
-
+//////////////////////////////////////////////////////////
 // //mitask c
 // const now = new Date();
 // const hours = now.getHours();
@@ -80,7 +95,7 @@
 // const shop = new Shop(4, 5, 2);
 // shop.sotish("non", 6);
 // shop.qoldiq();
-
+//////////////////////////////////////////////////////////
 //mitask b
 
 // function countDigits(text) {
@@ -93,7 +108,7 @@
 // 	return count;
 // }
 // console.log(countDigits("ad2a54y79wet0sfgb9"));
-
+//////////////////////////////////////////////////////////
 // //mitask a
 
 // function countLetter(a, b) {
