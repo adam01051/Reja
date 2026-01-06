@@ -1,11 +1,13 @@
-// mitask d
-function checkContent(a, b) {
-	let c = a.split("").sort().join();
-	let d = b.split("").sort().join();
-	return c === d;
-}
+//mitask e
 
-console.log(checkContent("mitgroup", "gmtiprou")); // true
+// mitask d
+// function checkContent(a, b) {
+// 	let c = a.split("").sort().join();
+// 	let d = b.split("").sort().join();
+// 	return c === d;
+// }
+
+// console.log(checkContent("mitgroup", "gmtiprou")); // true
 
 // function checkContent(a, b) {
 // 	if (a.length != b.length) return false;
