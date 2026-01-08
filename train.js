@@ -1,9 +1,34 @@
-// E-TASK:
-function getReverse(a) {
-	return a.split("").reverse().join("");
+//F - TASK
+
+function findDoublers(a) {
+	for (let i = 0; i < a.length; i++) {
+		for (let j = i + 1; j < a.length; j++) {
+			if (a[i] === a[j]) return true;
+		}
+	}
+	return false;
 }
 
-console.log(getReverse("hello world"));
+console.log(findDoublers("hello"));
+
+//this one only for  double letters  coming one after another
+// function findDoublers(a) {
+// 	for (let i = 0; i <= a.length - 1; i++) {
+// 		if (a[i] === a[i + 1]) {
+// 			return true;
+// 		}
+// 	}
+// 	return false;
+// }
+
+// console.log(findDoublers("hello world"));
+
+// E-TASK:
+// function getReverse(a) {
+// 	return a.split("").reverse().join("");
+// }
+
+// console.log(getReverse("hello world"));
 
 //1-try
 // function getReverse(a) {
