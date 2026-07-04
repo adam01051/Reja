@@ -13,7 +13,7 @@ mongodb.connect(
 		useUnifiedTopology: true,
 	},
 	(err, client) => {
-		if (err) console.log("error: ", error);
+		if (err) console.log("error: ", err);
 		else {
 			console.log("mongodb connection suceeded");
 			module.exports = client;

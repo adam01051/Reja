@@ -3,70 +3,114 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
+		<title>Reja Planner</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
 			rel="stylesheet"
-			integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-			crossorigin="anonymous"
 		/>
+		<link rel="stylesheet" href="/main.css" />
 	</head>
-	<body style="background-color: #b8bbd1">
-		<div class="container">
-			<h1 class="display-4 text-center py-1">REJA VA MAQSADLAR</h1>
+	<body class="reja-page">
+		<main class="task-shell">
+			<header class="task-hero motion-rise">
+				<nav class="app-nav" aria-label="Primary navigation">
+					<a class="brand-mark" href="/">
+						<span>R</span>
+						<strong>Reja</strong>
+					</a>
+					<a class="nav-link" href="/author">Portfolio</a>
+				</nav>
 
-			<div class="jumbotron p-3 shadow-sm">
-				<form id="create-form" action="/create-item" method="POST">
-					<div class="d-flex align-items-center">
+				<section class="task-hero__content">
+					<div>
+						<p class="eyebrow">Daily planning dashboard</p>
+						<h1>Plan clearly. Finish calmly.</h1>
+						<p>
+							Keep goals in one focused workspace with quick create, edit, and
+							clean-up actions.
+						</p>
+					</div>
+					<div class="task-hero__stats" aria-label="Task summary">
+						<span><%= items.length %></span>
+						<strong><%= items.length === 1 ? "active plan" : "active plans" %></strong>
+					</div>
+				</section>
+			</header>
+
+			<section class="task-board motion-rise" aria-labelledby="task-board-title">
+				<div class="task-board__header">
+					<div>
+						<p class="eyebrow">Workspace</p>
+						<h2 id="task-board-title">Today&apos;s plans</h2>
+					</div>
+					<button
+						id="clean-all"
+						class="ghost-button danger"
+						type="button"
+						<%= items.length === 0 ? "disabled" : "" %>
+					>
+						Clear all
+					</button>
+				</div>
+
+				<form id="create-form" class="task-form" action="/create-item" method="POST">
+					<label for="create-field">New plan</label>
+					<div class="task-form__row">
 						<input
 							id="create-field"
 							name="reja"
 							autofocus
 							autocomplete="off"
-							class="form-control mr-3"
 							type="text"
-							style="flex: 1"
+							placeholder="Write a goal, habit, or reminder"
+							maxlength="140"
 						/>
-						<button class="btn btn-primary" style="border-radius: 20px">
-							Yangi Reja Qoshish
-						</button>
+						<button class="primary-button" type="submit">Add plan</button>
 					</div>
+					<p id="form-feedback" class="form-feedback" aria-live="polite"></p>
 				</form>
-			</div>
 
-			<ul id="item-list" class="list-group pb-5">
-				<% items.map(function(item){%>
-				<li
-					class="list-group-item list-group-item-info d-flex align-items-center justify-content-between"
+				<ul
+					id="item-list"
+					class="task-list <%= items.length === 0 ? "is-empty" : "" %>"
+					aria-live="polite"
 				>
-					<span class="item-text"> <%= item.reja%> </span>
-					<div>
-						<button
-							data-id="<%= item._id %>"
-							class="edit-me btn btn-secondary btn-sm mr-1"
-						>
-							Ozgartirish
-						</button>
-						<button
-							data-id="<%= item._id %>"
-							class="delete-me btn btn-danger btn-sm"
-						>
-							Ochirish
-						</button>
-					</div>
-				</li>
-				<%})%>
-			</ul>
-			<button id="clean-all" class="btn btn-danger" style="border-radius: 20px">
-				Hamma rejalarni ochirish
-			</button>
-		</div>
-		<script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
-		<script src="/browser.js"></script>
+					<% items.map(function(item, index){ %>
+					<li class="task-card motion-item" style="--delay: <%= index * 55 %>ms">
+						<span class="task-card__index"><%= String(index + 1).padStart(2, "0") %></span>
+						<span class="item-text"><%= item.reja %></span>
+						<div class="task-card__actions">
+							<button
+								data-id="<%= item._id %>"
+								class="edit-me icon-button"
+								type="button"
+								aria-label="Edit plan"
+							>
+								Edit
+							</button>
+							<button
+								data-id="<%= item._id %>"
+								class="delete-me icon-button danger"
+								type="button"
+								aria-label="Delete plan"
+							>
+								Delete
+							</button>
+						</div>
+					</li>
+					<% }) %>
+				</ul>
+
+				<div id="empty-state" class="empty-state <%= items.length === 0 ? "" : "hidden" %>">
+					<span></span>
+					<strong>No plans yet</strong>
+					<p>Add your first plan above and it will appear here.</p>
+				</div>
+			</section>
+		</main>
+
+		<script type="module" src="/browser.js"></script>
 	</body>
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-		crossorigin="anonymous"
-	></script>
 </html>

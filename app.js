@@ -2,10 +2,10 @@ const express = require("express");
 const app = express();
 const http = require("http");
 const fs = require("fs");
+const user = require("./database/user.json");
 
 const db = require("./server").db();
 const mongodb = require("mongodb");
-app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -20,8 +20,15 @@ app.set("view engine", "ejs");
 app.post("/create-item", function (req, res) {
 	console.log("user entered create item");
 	const new_reja = req.body.reja;
+	if (!new_reja || !new_reja.trim()) {
+		return res.status(400).json({ error: "Reja text is required" });
+	}
 	console.log(req.body);
-	db.collection("reja").insertOne({ reja: new_reja }, (err, data) => {
+	db.collection("reja").insertOne({ reja: new_reja.trim() }, (err, data) => {
+		if (err) {
+			console.log(err);
+			return res.status(500).json({ error: "create failed" });
+		}
 		console.log(data.ops[0]);
 		res.json(data.ops[0]);
 	});
@@ -29,6 +36,8 @@ app.post("/create-item", function (req, res) {
 app.get("/author", function (req, res) {
 	res.render("author", { user: user });
 });
+
+app.use(express.static("public"));
 
 app.get("/", function (req, res) {
 	console.log("user entered /");
